@@ -23,3 +23,18 @@
         </navigator>
     </view>
 <!-- 导航 E -->
+
+<!-- 楼层 S -->
+    <view class="floor">
+        <view class="floor_group" wx:for="{{floorList}}" wx:key="index1" wx:for-item="item1" wx:for-index="index1">
+            <view class="floor_group_title">
+                <image src="{{item1.floor_title.image_src}}" mode="widthFix" />
+            </view>
+            <view class="floor_group_content">
+                <navigator wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name">
+                        <image src="{{item2.image_src}}" mode="{{index2===0?'widthFix':'scaleToFill'}}"/>
+                </navigator>
+            </view>
+        </view>
+    </view>
+<!-- 楼层 E -->
