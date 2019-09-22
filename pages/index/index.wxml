@@ -1,1 +1,25 @@
+<!-- 搜索框 S -->
 <SearchInput></SearchInput>
+<!-- 搜索框 E -->
+
+<!-- 轮播图 S -->
+<view class="index_swiper">
+  <swiper
+  indicator-dots
+  autoplay
+  circular
+  >
+    <swiper-item class="" wx:for="{{swiperList}}" wx:key="goods_id"> 
+        <image mode="widthFix" src="{{item.image_src}}" />
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 轮播图 E -->
+
+<!-- 导航 S -->
+    <view class="index_nav">
+        <navigator wx:for="{{catItems}}" wx:key="name">
+            <image src="{{item.image_src}}" mode="widthFix" />
+        </navigator>
+    </view>
+<!-- 导航 E -->

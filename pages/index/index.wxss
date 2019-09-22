@@ -1,0 +1,14 @@
+/* 轮播图 S */
+.index_swiper swiper {
+  height: 340rpx;
+}
+/* 轮播图 E*/
+/* 导航 S*/
+.index_nav {
+  display: flex;
+}
+.index_nav navigator {
+  flex: 1;
+  padding: 20rpx;
+}
+/* 导航 E*/
