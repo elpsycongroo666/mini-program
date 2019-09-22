@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "首页"
+  "usingComponents": {
+    "SearchInput": "/components/SearchInput/index"
+  },
+  "navigationBarTitleText": "黑马有狗"
 }
