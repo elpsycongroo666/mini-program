@@ -1,3 +1,12 @@
+/* 
+1.使用封装好的异步代码来发送请求，
+  1 在小程序中 要引入js文件的话，建议把路径补全
+  2 在被导出的js中 使用
+  export const 变量名
+  在导入的时候 直接通过 解构的代码来获取
+  import {变量名} from "路径";
+*/
+import {request} from '../../request/index.js'
 Page({
   data : {
     // 轮播图数组
@@ -16,41 +25,35 @@ Page({
 
   // 获取轮播图数据
   getSwiperData(){
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/swiperdata',
-      success: (result) => {
-        // console.log(result)
-        this.setData({
-          swiperList: result.data.message
-        })
-      },
-    });
+    request({
+      url: '/home/swiperdata',
+    }).then(result => {
+      this.setData({
+        swiperList: result.data.message
+      })
+    })
   },
 
   // 获取首页导航数组
   getCatItems(){
-      wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/catitems',
-      success: (result) => {
-        // console.log(result)
-        this.setData({
-          catItems : result.data.message
-        })
-      }
-    });
+      request({
+      url: '/home/catitems',
+    })
+    .then(result => {
+      this.setData({
+        catItems : result.data.message
+      })
+    })
   },
 
   // 获取首页楼层数组
   getFloorData(){
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
-      success: (result) => {
-        console.log(result)
-        this.setData({
-          floorList : result.data.message
-        })
-      }
-    });
-      
+    request({
+      url: '/home/floordata',
+    }).then(result => {
+      this.setData({
+        floorList : result.data.message
+      })
+    })
   }
 })
