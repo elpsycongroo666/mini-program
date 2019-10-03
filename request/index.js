@@ -24,10 +24,11 @@ export const request = (params) => {
             complete: () => {
                 // 无论请求失败还是成功都会执行的
                 loadTime--
-                if(loadTime === 0){
-                    // 所有请求都结束了
-                    wx.hideLoading();
-                }
+                // if(loadTime === 0){
+                //     // 所有请求都结束了
+                //     wx.hideLoading();
+                // }
+                loadTime === 0 && wx.hideLoading();
             }
         });
           

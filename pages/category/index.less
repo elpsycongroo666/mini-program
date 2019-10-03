@@ -1,0 +1,57 @@
+.cates_view{
+    /* 
+    height: 屏幕的高度 - 头部搜索宽度, 框的高度(45rpx) - 底部tabbar(45rpx)
+    让less不要编译某段代码
+    height:100% 已经去除了 tabbar 的高度了！！
+    100vh 100vw
+    vw = viewport width
+    vh = viewport height
+    约定了 100vw 等于屏宽度
+    约定了 100vh 等于屏幕的高度
+    在小程序里面 tabbar是不占宽度的
+    */
+    display: flex;
+    height: ~'calc(100vh - 90rpx)';
+}
+.menu_group{
+    /* 子项的高度和父项一样高 */
+    width: 160rpx;
+    .menu_item{
+        height: 80rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30rpx;
+    }
+    .active{
+        color:var(--themeColor);
+        border-left: 5rpx solid currentColor;
+    }
+}
+.goods_list{
+    flex: 1;
+    .goods_list_group{
+        .goods_group_title{
+            height: 80rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .title_item{
+                margin-right: 20rpx;
+                margin-left: 20rpx;
+            }
+        }
+        .goods_group_content{
+            display: flex;
+            flex-wrap: wrap;
+            .goods_item{
+                width: 33.33%;
+                text-align: center;
+                image{
+                    width: 60%;
+                }
+                .item_name{}
+            }
+        }
+    }
+}
